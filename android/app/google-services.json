@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "752794271888",
+    "project_id": "authify-flutterexample-38f4d",
+    "storage_bucket": "authify-flutterexample-38f4d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:752794271888:android:e9f4ed67e2aaf5e9b45815",
+        "android_client_info": {
+          "package_name": "com.example.authify_firebase"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCmeL1omh809WAJvdKnkvV7qUu6rTmNjbQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
