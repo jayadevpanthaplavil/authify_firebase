@@ -1,5 +1,5 @@
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:firebase_core/firebase_core.dart';
+
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 
@@ -22,11 +22,12 @@ class _SignUpScreenState extends State<SignUpScreen> {
     return Scaffold(
       extendBodyBehindAppBar: true,
       appBar: AppBar(
+        iconTheme: IconThemeData(),
         backgroundColor: Colors.transparent,
         elevation: 0,
         title: Text(
           "Sign Up",
-          style: TextStyle(fontWeight: FontWeight.bold, fontSize: 24),
+          style: TextStyle(fontWeight: FontWeight.bold, fontSize: 24,),
         ),
       ),
       body: Container(

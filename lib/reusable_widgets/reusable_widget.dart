@@ -1,4 +1,3 @@
-import 'package:authify_firebase/main.dart';
 import 'package:flutter/material.dart';
 
 TextField reusableTextField(String text, IconData icon, bool isPasswordType,
@@ -67,3 +66,45 @@ Row signUpOption(BuildContext context) {
     ],
   );
 }
+
+Row divLine() {
+  return Row(
+    children: [
+      Expanded(
+        child: Divider(
+          thickness: 0.5,
+          color: Colors.grey[400],
+        ),
+      ),
+      Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Text('Or continue with'),
+      ),
+      Expanded(
+        child: Divider(
+          thickness: 0.5,
+          color: Colors.grey[400],
+        ),
+      ),
+    ],
+  );
+}
+
+Widget socialLogin(String imgPath, Function onClicked) {
+  return GestureDetector(
+    onTap: (){onClicked();},
+    child: Card(
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
+      elevation:2,
+      child: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Image.asset(
+          imgPath,
+          width: 35,
+        ),
+      ),
+    ),
+  );
+}
+
+
