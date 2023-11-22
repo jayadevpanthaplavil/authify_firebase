@@ -101,6 +101,7 @@ Widget socialLogin(String imgPath, Function onClicked) {
         child: Image.asset(
           imgPath,
           width: 35,
+
         ),
       ),
     ),

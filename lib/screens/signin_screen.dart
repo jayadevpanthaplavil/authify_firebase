@@ -74,6 +74,17 @@ class _SignInScreenState extends State<SignInScreen> {
                           print("Facebook SignIn Error ${error.toString()}");
                         });
                       }),
+
+                      socialLogin("assets/images/github.png", () async {
+                        FirebaseService service = FirebaseService();
+
+                        await service.signInWithGithub(context).then((value) {
+                          print("Account logged successfully");
+                          Navigator.pushNamed(context, '/home_screen');
+                        }).onError((error, stackTrace) {
+                          print("Github SignIn Error ${error.toString()}");
+                        });
+                      }),
                     ],
                   ),
                   SizedBox(height: 20),
