@@ -50,16 +50,32 @@ class _SignInScreenState extends State<SignInScreen> {
                   }),
                   divLine(),
                   SizedBox(height: 10),
-                  socialLogin("assets/images/google.png", () async {
-                    FirebaseService service = FirebaseService();
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      socialLogin("assets/images/google.png", () async {
+                        FirebaseService service = FirebaseService();
 
-                    await service.signInWithGoogle().then((value) {
-                      print("Account logged successfully");
-                      Navigator.pushNamed(context, '/home_screen');
-                    }).onError((error, stackTrace) {
-                      print("Google SignIn Error");
-                    });
-                  }),
+                        await service.signInWithGoogle().then((value) {
+                          print("Account logged successfully");
+                          Navigator.pushNamed(context, '/home_screen');
+                        }).onError((error, stackTrace) {
+                          print("Google SignIn Error");
+                        });
+                      }),
+
+                      socialLogin("assets/images/facebook.png", () async {
+                        FirebaseService service = FirebaseService();
+
+                        await service.signInWithFacebook().then((value) {
+                          print("Account logged successfully");
+                          Navigator.pushNamed(context, '/home_screen');
+                        }).onError((error, stackTrace) {
+                          print("Facebook SignIn Error ${error.toString()}");
+                        });
+                      }),
+                    ],
+                  ),
                   SizedBox(height: 20),
                   signUpOption(context),
                 ],

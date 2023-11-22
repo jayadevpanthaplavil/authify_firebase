@@ -1,5 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_facebook_auth/flutter_facebook_auth.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -27,7 +28,10 @@ class _HomeScreenState extends State<HomeScreen> {
             Text(username),
             ElevatedButton(
               onPressed: (){
+                FacebookAuth.instance.logOut();
+
                 GoogleSignIn().signOut();
+
                 FirebaseAuth.instance.signOut().then((value) {
                   print("Signed Out");
                   Navigator.pushNamed(context, '/');
